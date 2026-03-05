@@ -1,0 +1,16 @@
+project/
+│
+├── src/
+│   ├── main.py
+│   ├── data_loader.py
+│   ├── data_cleaner.py
+│   ├── analyzer.py
+│   ├── visualizer.py
+│   └── report_generator.py
+│
+├── data/
+│   └── raw/
+│       └── sample_data.csv
+│
+└── templates/
+    └── report_template.html
