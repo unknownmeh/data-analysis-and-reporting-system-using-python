@@ -1,224 +1,112 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Data Analysis Report</title>
+📊 Automated Data Analysis & Report Generation using Python
+📌 Project Overview
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+This project is a Python-based data analysis system that processes structured datasets, performs statistical analysis, generates visualizations, and automatically produces an HTML report.
 
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f4f6f9;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
+The goal of this project is to help students understand how data pipelines work by combining data loading, cleaning, analysis, visualization, and reporting into a single automated workflow.
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 40px auto;
-        }
+🎯 Objectives
 
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+Load structured datasets
 
-        .header h1 {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
+Clean and preprocess the data
 
-        .header p {
-            color: #777;
-            font-size: 16px;
-        }
+Perform statistical analysis
 
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-        }
+Generate visualizations
 
-        .card h2 {
-            margin-top: 0;
-            font-size: 22px;
-            border-left: 5px solid #4e73df;
-            padding-left: 10px;
-        }
+Automatically create an HTML report
 
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            overflow-x: auto;
-        }
+🛠 Technologies Used
 
-        table th, table td {
-            padding: 10px;
-            text-align: center;
-            border: 1px solid #ddd;
-        }
+Python
 
-        table th {
-            background-color: #4e73df;
-            color: white;
-            font-weight: 600;
-        }
+pandas
 
-        table tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
+NumPy
 
-        img {
-            display: block;
-            margin: 20px auto;
-            border-radius: 10px;
-            max-width: 100%;
-            height: auto;
-        }
+Matplotlib
 
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            font-size: 14px;
-            color: #999;
-        }
+Seaborn
 
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 26px;
-            }
+Jinja2
 
-            .card h2 {
-                font-size: 18px;
-            }
-        }
-    </style>
-</head>
+📁 Project Structure
+data-analysis-project
+│
+├── src
+│   ├── main.py
+│   ├── data_loader.py
+│   ├── data_cleaner.py
+│   ├── analyzer.py
+│   ├── visualizer.py
+│   └── report_generator.py
+│
+├── templates
+│   └── report_template.html
+│
+├── reports
+│   └── final_report.html
+│
+└── README.md
+⚙️ Installation
 
-<body>
+Install Python (version 3.10 or above recommended).
 
-<div class="container">
+Install required libraries:
 
-    <div class="header">
-        <h1>📊 Data Analysis Report</h1>
-        <p>Automated Analytics & Statistical Summary</p>
-    </div>
+pip install pandas numpy matplotlib seaborn jinja2
+▶️ How to Run the Project
 
-    <div class="card">
-        <h2>Summary Statistics</h2>
-        <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>total_bill</th>
-      <th>tip</th>
-      <th>size</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>243.000000</td>
-      <td>243.000000</td>
-      <td>243.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>19.813868</td>
-      <td>3.002387</td>
-      <td>2.572016</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>8.910071</td>
-      <td>1.385002</td>
-      <td>0.952356</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>3.070000</td>
-      <td>1.000000</td>
-      <td>1.000000</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>13.380000</td>
-      <td>2.000000</td>
-      <td>2.000000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>17.810000</td>
-      <td>2.920000</td>
-      <td>2.000000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>24.175000</td>
-      <td>3.575000</td>
-      <td>3.000000</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>50.810000</td>
-      <td>10.000000</td>
-      <td>6.000000</td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+Open the terminal or command prompt.
 
-    <div class="card">
-        <h2>Correlation Matrix</h2>
-        <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>total_bill</th>
-      <th>tip</th>
-      <th>size</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>total_bill</th>
-      <td>1.000000</td>
-      <td>0.674998</td>
-      <td>0.597589</td>
-    </tr>
-    <tr>
-      <th>tip</th>
-      <td>0.674998</td>
-      <td>1.000000</td>
-      <td>0.488400</td>
-    </tr>
-    <tr>
-      <th>size</th>
-      <td>0.597589</td>
-      <td>0.488400</td>
-      <td>1.000000</td>
-    </tr>
-  </tbody>
-</table>
-    </div>
+Navigate to the project folder:
 
-    <div class="card">
-        <h2>Correlation Heatmap</h2>
-        <img src="reports/figures/correlation_heatmap.png">
-    </div>
+cd "D:\data analysis project"
 
-    <div class="footer">
-        Generated automatically by Python Data Analysis Pipeline
-    </div>
+Run the main program:
 
-</div>
+python src\main.py
+📊 Output
 
-</body>
-</html>
+After running the program, the system will generate an HTML report:
+
+reports/final_report.html
+
+Open this file in your browser to view:
+
+Summary statistics
+
+Correlation matrix
+
+Data visualization charts
+
+Automated analysis results
+
+✨ Features
+
+Automated data processing pipeline
+
+Data cleaning and preprocessing
+
+Statistical analysis
+
+Visualization generation
+
+HTML report generation
+
+🚀 Future Improvements
+
+Interactive dashboards
+
+Export reports as PDF
+
+Support for multiple datasets
+
+Web-based interface
+
+Advanced machine learning analysis
+
+👨‍💻 Author
+
+Student Data Analysis Project using Python
